@@ -64,14 +64,11 @@ namespace Blun.Csp.AspNetCore.TestApp
                     .AllowUnsafeEval(isDevelopment);
 
                 // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-                if (isDevelopment)
-                {
-                    builder.ScriptSrc.AllowUnsafeEval();
-                }
+                builder.ScriptSrc.AllowUnsafeEval(isDevelopment);
 
                 builder.StyleSrc
-                    .AllowSelf()
-                    .AllowUnsafeInline();
+                .AllowSelf()
+                .AllowUnsafeInline();
 
                 builder.FontSrc
                     .AllowSelf()

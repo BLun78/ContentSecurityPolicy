@@ -11,6 +11,7 @@ namespace Blun.ContentSecurityPolicy
         public List<string> ImgSrc { get; internal set; } = new List<string>();
         public List<string> FontSrc { get; internal set; } = new List<string>();
         public List<string> MediaSrc { get; internal set; } = new List<string>();
+        public List<string> ConnectSrc { get; internal set; } = new List<string>();
 
         public string CreateCspHeaderValue()
         {
@@ -21,6 +22,7 @@ namespace Blun.ContentSecurityPolicy
             value.Append(GetDirective("img-src", this.ImgSrc));
             value.Append(GetDirective("font-src", this.FontSrc));
             value.Append(GetDirective("media-src", this.MediaSrc));
+            value.Append(GetDirective("connect-src", this.ConnectSrc));
             return value.ToString();
         }
 

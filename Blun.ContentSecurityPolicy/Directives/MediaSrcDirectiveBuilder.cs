@@ -17,9 +17,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllowUnsafeInline<MediaSrcDirectiveBuilder>,
         IAllowNone<MediaSrcDirectiveBuilder>,
         IAllowNonce<MediaSrcDirectiveBuilder>,
-        IAllowHash<MediaSrcDirectiveBuilder>,
-        IAllowStrictDynamic<MediaSrcDirectiveBuilder>,
-        IAllowReportSample<MediaSrcDirectiveBuilder>
+        IAllowHash<MediaSrcDirectiveBuilder>
     {
         public new MediaSrcDirectiveBuilder AllowSelf() => (MediaSrcDirectiveBuilder)base.AllowSelf();
         public new MediaSrcDirectiveBuilder AllowUnsafeInline() => (MediaSrcDirectiveBuilder)base.AllowUnsafeInline();
@@ -30,8 +28,6 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new MediaSrcDirectiveBuilder AllowNone() => (MediaSrcDirectiveBuilder)base.AllowNone();
         public new MediaSrcDirectiveBuilder AllowUnsafeHashes() => (MediaSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new MediaSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (MediaSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);
-        public new MediaSrcDirectiveBuilder AllowStrictDynamic() => (MediaSrcDirectiveBuilder)base.AllowStrictDynamic();
-        public new MediaSrcDirectiveBuilder AllowReportSample() => (MediaSrcDirectiveBuilder)base.AllowReportSample();
         public new MediaSrcDirectiveBuilder AllowHash(HashDirective hash, string base64HashValue) => (MediaSrcDirectiveBuilder)base.AllowHash(hash, base64HashValue);
         public new MediaSrcDirectiveBuilder AllowNonce(string base64HashValue) => (MediaSrcDirectiveBuilder)base.AllowNonce(base64HashValue);
         public new MediaSrcDirectiveBuilder AllowSchemeSourceHttp() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceHttp();

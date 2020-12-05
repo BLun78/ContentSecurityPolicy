@@ -17,9 +17,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllowUnsafeInline<FontSrcDirectiveBuilder>,
         IAllowNone<FontSrcDirectiveBuilder>,
         IAllowNonce<FontSrcDirectiveBuilder>,
-        IAllowHash<FontSrcDirectiveBuilder>,
-        IAllowStrictDynamic<FontSrcDirectiveBuilder>,
-        IAllowReportSample<FontSrcDirectiveBuilder>
+        IAllowHash<FontSrcDirectiveBuilder>
     {
         public new FontSrcDirectiveBuilder AllowSelf() => (FontSrcDirectiveBuilder)base.AllowSelf();
         public new FontSrcDirectiveBuilder AllowUnsafeInline() => (FontSrcDirectiveBuilder)base.AllowUnsafeInline();
@@ -30,8 +28,6 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new FontSrcDirectiveBuilder AllowNone() => (FontSrcDirectiveBuilder)base.AllowNone();
         public new FontSrcDirectiveBuilder AllowUnsafeHashes() => (FontSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new FontSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (FontSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);
-        public new FontSrcDirectiveBuilder AllowStrictDynamic() => (FontSrcDirectiveBuilder)base.AllowStrictDynamic();
-        public new FontSrcDirectiveBuilder AllowReportSample() => (FontSrcDirectiveBuilder)base.AllowReportSample();
         public new FontSrcDirectiveBuilder AllowHash(HashDirective hash, string base64HashValue) => (FontSrcDirectiveBuilder)base.AllowHash(hash, base64HashValue);
         public new FontSrcDirectiveBuilder AllowNonce(string base64HashValue) => (FontSrcDirectiveBuilder)base.AllowNonce(base64HashValue);
         public new FontSrcDirectiveBuilder AllowSchemeSourceHttp() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceHttp();

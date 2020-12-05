@@ -56,7 +56,5 @@ namespace Blun.ContentSecurityPolicy.AspNetCore
 
             return _cache;
         }
-
-      
     }
 }

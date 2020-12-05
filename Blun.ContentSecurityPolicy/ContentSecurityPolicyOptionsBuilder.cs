@@ -14,6 +14,7 @@ namespace Blun.ContentSecurityPolicy
         public ImgSrcDirectiveBuilder ImgSrc { get; internal set; } = new ImgSrcDirectiveBuilder();
         public FontSrcDirectiveBuilder FontSrc { get; internal set; } = new FontSrcDirectiveBuilder();
         public MediaSrcDirectiveBuilder MediaSrc { get; internal set; } = new MediaSrcDirectiveBuilder();
+        public ConnectSrcDirectiveBuilder ConnectSrc { get; internal set; } = new ConnectSrcDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
@@ -23,12 +24,14 @@ namespace Blun.ContentSecurityPolicy
             _contentSecurityPolicyOptions.ImgSrc.Clear();
             _contentSecurityPolicyOptions.FontSrc.Clear();
             _contentSecurityPolicyOptions.MediaSrc.Clear();
+            _contentSecurityPolicyOptions.ConnectSrc.Clear();
             _contentSecurityPolicyOptions.DefaultSrc.AddRange(DefaultSrc.Sources);
             _contentSecurityPolicyOptions.ScriptSrc.AddRange(ScriptSrc.Sources);
             _contentSecurityPolicyOptions.StyleSrc.AddRange(StyleSrc.Sources);
             _contentSecurityPolicyOptions.ImgSrc.AddRange(ImgSrc.Sources);
             _contentSecurityPolicyOptions.FontSrc.AddRange(FontSrc.Sources);
             _contentSecurityPolicyOptions.MediaSrc.AddRange(MediaSrc.Sources);
+            _contentSecurityPolicyOptions.ConnectSrc.AddRange(ConnectSrc.Sources);
             return _contentSecurityPolicyOptions;
         }
     }
