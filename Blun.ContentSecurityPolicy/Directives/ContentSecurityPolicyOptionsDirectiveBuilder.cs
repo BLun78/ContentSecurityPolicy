@@ -19,7 +19,12 @@ namespace Blun.ContentSecurityPolicy.Directives
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeHashes() => Allow("'unsafe-hashes'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowStrictDynamic() => Allow("'strict-dynamic'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowReportSample() => Allow("'report-sample'");
-        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowData() => Allow("data:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceHttp() => Allow("http:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceHttps() => Allow("https:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceData() => Allow("data:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceMediaStream() => Allow("mediastream:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceBlob() => Allow("blob:");
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceFilesystem() => Allow("filesystem:");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowNone() => Allow("none");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowAny() => Allow("*");
 
