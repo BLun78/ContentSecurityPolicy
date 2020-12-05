@@ -5,7 +5,7 @@ using Blun.ContentSecurityPolicy.Directives.Values;
 
 namespace Blun.ContentSecurityPolicy.Directives
 {
-    public class DefaultSrcDirectiveBuilder :
+    public sealed class DefaultSrcDirectiveBuilder :
         ContentSecurityPolicyOptionsDirectiveBuilder,
         IAllow<DefaultSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<DefaultSrcDirectiveBuilder>,

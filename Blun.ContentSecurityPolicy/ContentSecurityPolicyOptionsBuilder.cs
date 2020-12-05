@@ -10,9 +10,9 @@ namespace Blun.ContentSecurityPolicy
 
         public ContentSecurityPolicyOptionsBuilder() { }
 
-        public DefaultSrcDirectiveBuilder Defaults { get; set; } = new DefaultSrcDirectiveBuilder();
-        public ScriptsSrcDirectiveBuilder Scripts { get; set; } = new ScriptsSrcDirectiveBuilder();
-        //public ContentSecurityPolicyOptionsDirectiveBuilder Styles { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
+        internal DefaultSrcDirectiveBuilder Defaults { get; set; } = new DefaultSrcDirectiveBuilder();
+        internal ScriptsSrcDirectiveBuilder Scripts { get; set; } = new ScriptsSrcDirectiveBuilder();
+        public StylesSrcDirectiveBuilder Styles { get; set; } = new StylesSrcDirectiveBuilder();
         //public ContentSecurityPolicyOptionsDirectiveBuilder Images { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
         //public ContentSecurityPolicyOptionsDirectiveBuilder Fonts { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
         //public ContentSecurityPolicyOptionsDirectiveBuilder Media { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
@@ -27,7 +27,7 @@ namespace Blun.ContentSecurityPolicy
             _contentSecurityPolicyOptions.Media.Clear();
             _contentSecurityPolicyOptions.Defaults.AddRange(Defaults.Sources);
             _contentSecurityPolicyOptions.Scripts.AddRange(Scripts.Sources);
-            //_contentSecurityPolicyOptions.Styles.AddRange(Styles.Sources);
+            _contentSecurityPolicyOptions.Styles.AddRange(Styles.Sources);
             //_contentSecurityPolicyOptions.Images.AddRange(Images.Sources);
             //_contentSecurityPolicyOptions.Fonts.AddRange(Fonts.Sources);
             //_contentSecurityPolicyOptions.Media.AddRange(Media.Sources);
