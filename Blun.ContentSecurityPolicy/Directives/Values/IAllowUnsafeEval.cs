@@ -3,6 +3,6 @@
     public interface IAllowUnsafeEval<T>
     {
         T AllowUnsafeEval();
-        T AllowUnsafeEval(bool isDev);
+        T AllowUnsafeEval(bool setThis);
     }
 }

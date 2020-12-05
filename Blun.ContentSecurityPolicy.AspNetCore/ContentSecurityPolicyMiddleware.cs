@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
@@ -49,26 +50,13 @@ namespace Blun.ContentSecurityPolicy.AspNetCore
             {
                 if (_isCacheActive) return _cache;
 
-                _cache = CreateCspHeaderValue();
+                _cache = _contentSecurityPolicyOptions.CreateCspHeaderValue();
                 _isCacheActive = true;
             }
 
             return _cache;
         }
 
-        private string CreateCspHeaderValue()
-        {
-            var value = "";
-            value += GetDirective("default-src", _contentSecurityPolicyOptions.Defaults);
-            value += GetDirective("script-src", _contentSecurityPolicyOptions.Scripts);
-            value += GetDirective("style-src", _contentSecurityPolicyOptions.Styles);
-            value += GetDirective("img-src", _contentSecurityPolicyOptions.Images);
-            value += GetDirective("font-src", _contentSecurityPolicyOptions.Fonts);
-            value += GetDirective("media-src", _contentSecurityPolicyOptions.Media);
-            return value;
-        }
-
-        private static string GetDirective(string directive, List<string> sources)
-            => sources.Count > 0 ? $"{directive} {string.Join(" ", sources)}; " : "";
+      
     }
 }

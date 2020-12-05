@@ -53,11 +53,11 @@ namespace Blun.Csp.AspNetCore.TestApp
                 isDevelopment = true;
 #endif
 
-                builder.Defaults
+                builder.DefaultSrc
                     .AllowSelf()
                     .AllowUnsafeInline();
 
-                builder.Scripts
+                builder.ScriptSrc
                     .AllowSelf()
                     .AllowUnsafeInline()
                     // ReSharper disable once ConditionIsAlwaysTrueOrFalse
@@ -66,24 +66,24 @@ namespace Blun.Csp.AspNetCore.TestApp
                 // ReSharper disable once ConditionIsAlwaysTrueOrFalse
                 if (isDevelopment)
                 {
-                    builder.Scripts.AllowUnsafeEval();
+                    builder.ScriptSrc.AllowUnsafeEval();
                 }
 
-                builder.Styles
+                builder.StyleSrc
                     .AllowSelf()
                     .AllowUnsafeInline();
 
-                builder.Fonts
+                builder.FontSrc
                     .AllowSelf()
                     .AllowUnsafeInline()
                     .AllowData();
 
-                builder.Images
+                builder.ImgSrc
                     .AllowSelf()
                     .AllowUnsafeInline()
                     .AllowData();
 
-                builder.Media
+                builder.MediaSrc
                     .AllowSelf()
                     .AllowUnsafeInline();
             });

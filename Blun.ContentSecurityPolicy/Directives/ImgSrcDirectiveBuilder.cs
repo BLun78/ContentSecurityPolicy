@@ -5,7 +5,7 @@ using Blun.ContentSecurityPolicy.Directives.Values;
 
 namespace Blun.ContentSecurityPolicy.Directives
 {
-    public sealed class StylesSrcDirectiveBuilder :
+    public sealed class ImgSrcDirectiveBuilder :
         ContentSecurityPolicyOptionsDirectiveBuilder,
         IAllow<DefaultSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<DefaultSrcDirectiveBuilder>,
@@ -17,7 +17,9 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllowUnsafeInline<DefaultSrcDirectiveBuilder>,
         IAllowNone<DefaultSrcDirectiveBuilder>,
         IAllowNonce<DefaultSrcDirectiveBuilder>,
-        IAllowHash<DefaultSrcDirectiveBuilder>
+        IAllowHash<DefaultSrcDirectiveBuilder>,
+        IAllowStrictDynamic<DefaultSrcDirectiveBuilder>,
+        IAllowReportSample<DefaultSrcDirectiveBuilder>
     {
         public new DefaultSrcDirectiveBuilder AllowSelf() => (DefaultSrcDirectiveBuilder)base.AllowSelf();
         public new DefaultSrcDirectiveBuilder AllowUnsafeInline() => (DefaultSrcDirectiveBuilder)base.AllowUnsafeInline();
@@ -28,6 +30,8 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new DefaultSrcDirectiveBuilder AllowNone() => (DefaultSrcDirectiveBuilder)base.AllowNone();
         public new DefaultSrcDirectiveBuilder AllowUnsafeHashes() => (DefaultSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new DefaultSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (DefaultSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);
+        public new DefaultSrcDirectiveBuilder AllowStrictDynamic() => (DefaultSrcDirectiveBuilder)base.AllowStrictDynamic();
+        public new DefaultSrcDirectiveBuilder AllowReportSample() => (DefaultSrcDirectiveBuilder)base.AllowReportSample();
         public new DefaultSrcDirectiveBuilder AllowHash(HashDirective hash, string base64HashValue) => (DefaultSrcDirectiveBuilder)base.AllowHash(hash, base64HashValue);
         public new DefaultSrcDirectiveBuilder AllowNonce(string base64HashValue) => (DefaultSrcDirectiveBuilder)base.AllowNonce(base64HashValue);
         public new DefaultSrcDirectiveBuilder AllowSchemeSourceHttp() => (DefaultSrcDirectiveBuilder)base.AllowSchemeSourceHttp();

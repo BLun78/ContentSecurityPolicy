@@ -7,30 +7,28 @@ namespace Blun.ContentSecurityPolicy
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
 
         private readonly ContentSecurityPolicyOptions _contentSecurityPolicyOptions = new ContentSecurityPolicyOptions();
-
-        public ContentSecurityPolicyOptionsBuilder() { }
-
-        internal DefaultSrcDirectiveBuilder Defaults { get; set; } = new DefaultSrcDirectiveBuilder();
-        internal ScriptsSrcDirectiveBuilder Scripts { get; set; } = new ScriptsSrcDirectiveBuilder();
-        public StylesSrcDirectiveBuilder Styles { get; set; } = new StylesSrcDirectiveBuilder();
-        //public ContentSecurityPolicyOptionsDirectiveBuilder Images { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
-        //public ContentSecurityPolicyOptionsDirectiveBuilder Fonts { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
-        //public ContentSecurityPolicyOptionsDirectiveBuilder Media { get; set; } = new ContentSecurityPolicyOptionsDirectiveBuilder();
+        
+        public DefaultSrcDirectiveBuilder DefaultSrc { get; internal set; } = new DefaultSrcDirectiveBuilder();
+        public ScriptsSrcDirectiveBuilder ScriptSrc { get; internal set; } = new ScriptsSrcDirectiveBuilder();
+        public StylesSrcDirectiveBuilder StyleSrc { get; internal set; } = new StylesSrcDirectiveBuilder();
+        public ImgSrcDirectiveBuilder ImgSrc { get; internal set; } = new ImgSrcDirectiveBuilder();
+        public FontSrcDirectiveBuilder FontSrc { get; internal set; } = new FontSrcDirectiveBuilder();
+        public MediaSrcDirectiveBuilder MediaSrc { get; internal set; } = new MediaSrcDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
-            _contentSecurityPolicyOptions.Defaults.Clear();
-            _contentSecurityPolicyOptions.Scripts.Clear();
-            _contentSecurityPolicyOptions.Styles.Clear();
-            _contentSecurityPolicyOptions.Images.Clear();
-            _contentSecurityPolicyOptions.Fonts.Clear();
-            _contentSecurityPolicyOptions.Media.Clear();
-            _contentSecurityPolicyOptions.Defaults.AddRange(Defaults.Sources);
-            _contentSecurityPolicyOptions.Scripts.AddRange(Scripts.Sources);
-            _contentSecurityPolicyOptions.Styles.AddRange(Styles.Sources);
-            //_contentSecurityPolicyOptions.Images.AddRange(Images.Sources);
-            //_contentSecurityPolicyOptions.Fonts.AddRange(Fonts.Sources);
-            //_contentSecurityPolicyOptions.Media.AddRange(Media.Sources);
+            _contentSecurityPolicyOptions.DefaultSrc.Clear();
+            _contentSecurityPolicyOptions.ScriptSrc.Clear();
+            _contentSecurityPolicyOptions.StyleSrc.Clear();
+            _contentSecurityPolicyOptions.ImgSrc.Clear();
+            _contentSecurityPolicyOptions.FontSrc.Clear();
+            _contentSecurityPolicyOptions.MediaSrc.Clear();
+            _contentSecurityPolicyOptions.DefaultSrc.AddRange(DefaultSrc.Sources);
+            _contentSecurityPolicyOptions.ScriptSrc.AddRange(ScriptSrc.Sources);
+            _contentSecurityPolicyOptions.StyleSrc.AddRange(StyleSrc.Sources);
+            _contentSecurityPolicyOptions.ImgSrc.AddRange(ImgSrc.Sources);
+            _contentSecurityPolicyOptions.FontSrc.AddRange(FontSrc.Sources);
+            _contentSecurityPolicyOptions.MediaSrc.AddRange(MediaSrc.Sources);
             return _contentSecurityPolicyOptions;
         }
     }

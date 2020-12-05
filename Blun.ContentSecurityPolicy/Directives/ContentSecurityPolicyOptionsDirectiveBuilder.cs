@@ -14,9 +14,6 @@ namespace Blun.ContentSecurityPolicy.Directives
         }
 
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSelf() => Allow("'self'");
-        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeInline() => Allow("'unsafe-inline'");
-        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeEval() => Allow("'unsafe-eval'");
-        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeHashes() => Allow("'unsafe-hashes'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowStrictDynamic() => Allow("'strict-dynamic'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowReportSample() => Allow("'report-sample'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSchemeSourceHttp() => Allow("http:");
@@ -59,12 +56,34 @@ namespace Blun.ContentSecurityPolicy.Directives
                     throw new NotSupportedException($"The Hash [{hash.ToString()}] is not supported now!");
             }
         }
-
-        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeEval(bool isDev)
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeInline() => AllowUnsafeInline(true);
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeInline(bool setThis)
         {
-            if (isDev)
+            if (setThis)
             {
-                Allow("'unsafe-eval'");
+                return Allow("'unsafe-inline'");
+            }
+
+            return this;
+        }
+
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeHashes() => AllowUnsafeHashes(true);
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeHashes(bool setThis)
+        {
+            if (setThis)
+            {
+                return Allow("unsafe-hashes'");
+            }
+
+            return this;
+        }
+
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeEval() => AllowUnsafeEval(true);
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowUnsafeEval(bool setThis)
+        {
+            if (setThis)
+            {
+                return Allow("'unsafe-eval'");
             }
 
             return this;
@@ -76,7 +95,7 @@ namespace Blun.ContentSecurityPolicy.Directives
             return this;
         }
 
-        public static bool IsBase64String(string base64)
+        protected static bool IsBase64String(string base64)
         {
             return true;
         }

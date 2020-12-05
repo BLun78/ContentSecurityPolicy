@@ -3,5 +3,6 @@
     public interface IAllowUnsafeHashes<T>
     {
         T AllowUnsafeHashes();
+        T AllowUnsafeHashes(bool setThis);
     }
 }
