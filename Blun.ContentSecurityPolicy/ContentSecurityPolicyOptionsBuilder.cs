@@ -19,6 +19,7 @@ namespace Blun.ContentSecurityPolicy
         public FrameSrcDirectiveBuilder FrameSrc { get; internal set; } = new FrameSrcDirectiveBuilder();
         public ManifestSrcDirectiveBuilder ManifestSrc { get; internal set; } = new ManifestSrcDirectiveBuilder();
         public ChildSrcDirectiveBuilder ChildSrc { get; internal set; } = new ChildSrcDirectiveBuilder();
+        public ObjectSrcDirectiveBuilder ObjectSrc { get; internal set; } = new ObjectSrcDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
@@ -32,6 +33,7 @@ namespace Blun.ContentSecurityPolicy
             ArrangeBuild(_contentSecurityPolicyOptions.FrameSrc, FrameSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.ManifestSrc, ManifestSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.ChildSrc, ChildSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ObjectSrc, ObjectSrc.Sources);
             return _contentSecurityPolicyOptions;
         }
 
