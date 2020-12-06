@@ -10,6 +10,10 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllow<FontSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<FontSrcDirectiveBuilder>,
         IAllowSchemeSourceHttps<FontSrcDirectiveBuilder>,
+        IAllowSchemeSourceData<FontSrcDirectiveBuilder>,
+        IAllowSchemeSourceMediaStream<FontSrcDirectiveBuilder>,
+        IAllowSchemeSourceBlob<FontSrcDirectiveBuilder>,
+        IAllowSchemeSourceFilesystem<FontSrcDirectiveBuilder>,
         IAllowAny<FontSrcDirectiveBuilder>,
         IAllowSelf<FontSrcDirectiveBuilder>,
         IAllowUnsafeEval<FontSrcDirectiveBuilder>,
@@ -33,5 +37,9 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new FontSrcDirectiveBuilder AllowSchemeSourceHttp() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceHttp();
         public new FontSrcDirectiveBuilder AllowSchemeSourceHttps() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceHttps();
         public new FontSrcDirectiveBuilder AllowAny() => (FontSrcDirectiveBuilder)base.AllowAny();
+        public new FontSrcDirectiveBuilder AllowSchemeSourceData() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceData();
+        public new FontSrcDirectiveBuilder AllowSchemeSourceMediaStream() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceMediaStream();
+        public new FontSrcDirectiveBuilder AllowSchemeSourceBlob() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceBlob();
+        public new FontSrcDirectiveBuilder AllowSchemeSourceFilesystem() => (FontSrcDirectiveBuilder)base.AllowSchemeSourceFilesystem();
     }
 }

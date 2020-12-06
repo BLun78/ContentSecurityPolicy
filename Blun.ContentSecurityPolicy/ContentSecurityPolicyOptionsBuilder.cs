@@ -1,4 +1,5 @@
-﻿using Blun.ContentSecurityPolicy.Directives;
+﻿using System.Collections.Generic;
+using Blun.ContentSecurityPolicy.Directives;
 
 namespace Blun.ContentSecurityPolicy
 {
@@ -15,24 +16,25 @@ namespace Blun.ContentSecurityPolicy
         public FontSrcDirectiveBuilder FontSrc { get; internal set; } = new FontSrcDirectiveBuilder();
         public MediaSrcDirectiveBuilder MediaSrc { get; internal set; } = new MediaSrcDirectiveBuilder();
         public ConnectSrcDirectiveBuilder ConnectSrc { get; internal set; } = new ConnectSrcDirectiveBuilder();
+        public FrameSrcDirectiveBuilder FrameSrc { get; internal set; } = new FrameSrcDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
-            _contentSecurityPolicyOptions.DefaultSrc.Clear();
-            _contentSecurityPolicyOptions.ScriptSrc.Clear();
-            _contentSecurityPolicyOptions.StyleSrc.Clear();
-            _contentSecurityPolicyOptions.ImgSrc.Clear();
-            _contentSecurityPolicyOptions.FontSrc.Clear();
-            _contentSecurityPolicyOptions.MediaSrc.Clear();
-            _contentSecurityPolicyOptions.ConnectSrc.Clear();
-            _contentSecurityPolicyOptions.DefaultSrc.AddRange(DefaultSrc.Sources);
-            _contentSecurityPolicyOptions.ScriptSrc.AddRange(ScriptSrc.Sources);
-            _contentSecurityPolicyOptions.StyleSrc.AddRange(StyleSrc.Sources);
-            _contentSecurityPolicyOptions.ImgSrc.AddRange(ImgSrc.Sources);
-            _contentSecurityPolicyOptions.FontSrc.AddRange(FontSrc.Sources);
-            _contentSecurityPolicyOptions.MediaSrc.AddRange(MediaSrc.Sources);
-            _contentSecurityPolicyOptions.ConnectSrc.AddRange(ConnectSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.DefaultSrc, DefaultSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ScriptSrc, ScriptSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.StyleSrc, StyleSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ImgSrc, ImgSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.FontSrc, FontSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.MediaSrc, MediaSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ConnectSrc, ConnectSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.FrameSrc, FrameSrc.Sources);
             return _contentSecurityPolicyOptions;
+        }
+
+        private void ArrangeBuild(List<string> directiveBuilderSource, List<string> source)
+        {
+            directiveBuilderSource.Clear();
+            directiveBuilderSource.AddRange(source);
         }
     }
 }

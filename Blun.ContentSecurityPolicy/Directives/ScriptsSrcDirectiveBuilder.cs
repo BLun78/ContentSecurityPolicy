@@ -10,6 +10,10 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllow<ScriptsSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<ScriptsSrcDirectiveBuilder>,
         IAllowSchemeSourceHttps<ScriptsSrcDirectiveBuilder>,
+        IAllowSchemeSourceData<ScriptsSrcDirectiveBuilder>,
+        IAllowSchemeSourceMediaStream<ScriptsSrcDirectiveBuilder>,
+        IAllowSchemeSourceBlob<ScriptsSrcDirectiveBuilder>,
+        IAllowSchemeSourceFilesystem<ScriptsSrcDirectiveBuilder>,
         IAllowAny<ScriptsSrcDirectiveBuilder>,
         IAllowSelf<ScriptsSrcDirectiveBuilder>,
         IAllowUnsafeEval<ScriptsSrcDirectiveBuilder>,
@@ -37,5 +41,9 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new ScriptsSrcDirectiveBuilder AllowSchemeSourceHttp() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceHttp();
         public new ScriptsSrcDirectiveBuilder AllowSchemeSourceHttps() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceHttps();
         public new ScriptsSrcDirectiveBuilder AllowAny() => (ScriptsSrcDirectiveBuilder)base.AllowAny();
+        public new ScriptsSrcDirectiveBuilder AllowSchemeSourceData() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceData();
+        public new ScriptsSrcDirectiveBuilder AllowSchemeSourceMediaStream() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceMediaStream();
+        public new ScriptsSrcDirectiveBuilder AllowSchemeSourceBlob() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceBlob();
+        public new ScriptsSrcDirectiveBuilder AllowSchemeSourceFilesystem() => (ScriptsSrcDirectiveBuilder)base.AllowSchemeSourceFilesystem();
     }
 }

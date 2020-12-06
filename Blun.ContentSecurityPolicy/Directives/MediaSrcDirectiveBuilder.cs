@@ -10,6 +10,10 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllow<MediaSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<MediaSrcDirectiveBuilder>,
         IAllowSchemeSourceHttps<MediaSrcDirectiveBuilder>,
+        IAllowSchemeSourceData<MediaSrcDirectiveBuilder>,
+        IAllowSchemeSourceMediaStream<MediaSrcDirectiveBuilder>,
+        IAllowSchemeSourceBlob<MediaSrcDirectiveBuilder>,
+        IAllowSchemeSourceFilesystem<MediaSrcDirectiveBuilder>,
         IAllowAny<MediaSrcDirectiveBuilder>,
         IAllowSelf<MediaSrcDirectiveBuilder>,
         IAllowUnsafeEval<MediaSrcDirectiveBuilder>,
@@ -32,6 +36,11 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new MediaSrcDirectiveBuilder AllowNonce(string base64HashValue) => (MediaSrcDirectiveBuilder)base.AllowNonce(base64HashValue);
         public new MediaSrcDirectiveBuilder AllowSchemeSourceHttp() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceHttp();
         public new MediaSrcDirectiveBuilder AllowSchemeSourceHttps() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceHttps();
-        public new MediaSrcDirectiveBuilder AllowAny() => (MediaSrcDirectiveBuilder)base.AllowAny();
+        public new MediaSrcDirectiveBuilder AllowAny() => (MediaSrcDirectiveBuilder)base.AllowAny(); 
+        public new MediaSrcDirectiveBuilder AllowSchemeSourceData() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceData();
+        public new MediaSrcDirectiveBuilder AllowSchemeSourceMediaStream() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceMediaStream();
+        public new MediaSrcDirectiveBuilder AllowSchemeSourceBlob() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceBlob();
+        public new MediaSrcDirectiveBuilder AllowSchemeSourceFilesystem() => (MediaSrcDirectiveBuilder)base.AllowSchemeSourceFilesystem();
+
     }
 }

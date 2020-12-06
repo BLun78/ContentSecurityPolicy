@@ -10,6 +10,10 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllow<ConnectSrcDirectiveBuilder>,
         IAllowSchemeSourceHttp<ConnectSrcDirectiveBuilder>,
         IAllowSchemeSourceHttps<ConnectSrcDirectiveBuilder>,
+        IAllowSchemeSourceData<ConnectSrcDirectiveBuilder>,
+        IAllowSchemeSourceMediaStream<ConnectSrcDirectiveBuilder>,
+        IAllowSchemeSourceBlob<ConnectSrcDirectiveBuilder>,
+        IAllowSchemeSourceFilesystem<ConnectSrcDirectiveBuilder>,
         IAllowAny<ConnectSrcDirectiveBuilder>,
         IAllowSelf<ConnectSrcDirectiveBuilder>,
         IAllowUnsafeEval<ConnectSrcDirectiveBuilder>,
@@ -33,5 +37,9 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new ConnectSrcDirectiveBuilder AllowSchemeSourceHttp() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceHttp();
         public new ConnectSrcDirectiveBuilder AllowSchemeSourceHttps() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceHttps();
         public new ConnectSrcDirectiveBuilder AllowAny() => (ConnectSrcDirectiveBuilder)base.AllowAny();
+        public new ConnectSrcDirectiveBuilder AllowSchemeSourceData() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceData();
+        public new ConnectSrcDirectiveBuilder AllowSchemeSourceMediaStream() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceMediaStream();
+        public new ConnectSrcDirectiveBuilder AllowSchemeSourceBlob() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceBlob();
+        public new ConnectSrcDirectiveBuilder AllowSchemeSourceFilesystem() => (ConnectSrcDirectiveBuilder)base.AllowSchemeSourceFilesystem();
     }
 }
