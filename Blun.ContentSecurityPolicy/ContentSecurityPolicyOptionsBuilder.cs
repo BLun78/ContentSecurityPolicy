@@ -17,6 +17,8 @@ namespace Blun.ContentSecurityPolicy
         public MediaSrcDirectiveBuilder MediaSrc { get; internal set; } = new MediaSrcDirectiveBuilder();
         public ConnectSrcDirectiveBuilder ConnectSrc { get; internal set; } = new ConnectSrcDirectiveBuilder();
         public FrameSrcDirectiveBuilder FrameSrc { get; internal set; } = new FrameSrcDirectiveBuilder();
+        public ManifestSrcDirectiveBuilder ManifestSrc { get; internal set; } = new ManifestSrcDirectiveBuilder();
+        public ChildSrcDirectiveBuilder ChildSrc { get; internal set; } = new ChildSrcDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
@@ -28,10 +30,12 @@ namespace Blun.ContentSecurityPolicy
             ArrangeBuild(_contentSecurityPolicyOptions.MediaSrc, MediaSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.ConnectSrc, ConnectSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.FrameSrc, FrameSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ManifestSrc, ManifestSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ChildSrc, ChildSrc.Sources);
             return _contentSecurityPolicyOptions;
         }
 
-        private void ArrangeBuild(List<string> directiveBuilderSource, List<string> source)
+        private static void ArrangeBuild(List<string> directiveBuilderSource, IEnumerable<string> source)
         {
             directiveBuilderSource.Clear();
             directiveBuilderSource.AddRange(source);

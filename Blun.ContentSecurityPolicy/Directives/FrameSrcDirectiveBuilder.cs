@@ -21,9 +21,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         IAllowUnsafeInline<FrameSrcDirectiveBuilder>,
         IAllowNone<FrameSrcDirectiveBuilder>,
         IAllowNonce<FrameSrcDirectiveBuilder>,
-        IAllowHash<FrameSrcDirectiveBuilder>,
-        IAllowStrictDynamic<FrameSrcDirectiveBuilder>,
-        IAllowReportSample<FrameSrcDirectiveBuilder>
+        IAllowHash<FrameSrcDirectiveBuilder>
     {
         public new FrameSrcDirectiveBuilder AllowSelf() => (FrameSrcDirectiveBuilder)base.AllowSelf();
         public new FrameSrcDirectiveBuilder AllowUnsafeInline() => (FrameSrcDirectiveBuilder)base.AllowUnsafeInline();
@@ -34,8 +32,6 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new FrameSrcDirectiveBuilder AllowNone() => (FrameSrcDirectiveBuilder)base.AllowNone();
         public new FrameSrcDirectiveBuilder AllowUnsafeHashes() => (FrameSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new FrameSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (FrameSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);
-        public new FrameSrcDirectiveBuilder AllowStrictDynamic() => (FrameSrcDirectiveBuilder)base.AllowStrictDynamic();
-        public new FrameSrcDirectiveBuilder AllowReportSample() => (FrameSrcDirectiveBuilder)base.AllowReportSample();
         public new FrameSrcDirectiveBuilder AllowHash(HashDirective hash, string base64HashValue) => (FrameSrcDirectiveBuilder)base.AllowHash(hash, base64HashValue);
         public new FrameSrcDirectiveBuilder AllowNonce(string base64HashValue) => (FrameSrcDirectiveBuilder)base.AllowNonce(base64HashValue);
         public new FrameSrcDirectiveBuilder AllowSchemeSourceHttp() => (FrameSrcDirectiveBuilder)base.AllowSchemeSourceHttp();
