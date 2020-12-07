@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B7D11E21-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blun.Csp.MvcWebapi.TestApp", "Blun.Csp.MvcWebapi.TestApp\Blun.Csp.MvcWebapi.TestApp.csproj", "{D17355D4-E3AF-423A-B499-18423D2062F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blun.ContentSecurityPolicy.Webapi", "Blun.ContentSecurityPolicy.Webapi\Blun.ContentSecurityPolicy.Webapi.csproj", "{1DF2AA71-8BA9-4DF6-8930-67CF991D32D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blun.ContentSecurityPolicy.Owin", "Blun.ContentSecurityPolicy.Owin\Blun.ContentSecurityPolicy.Owin.csproj", "{5858430D-4789-4E4A-95B6-2CAB2101E4EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{D17355D4-E3AF-423A-B499-18423D2062F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D17355D4-E3AF-423A-B499-18423D2062F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D17355D4-E3AF-423A-B499-18423D2062F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF2AA71-8BA9-4DF6-8930-67CF991D32D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF2AA71-8BA9-4DF6-8930-67CF991D32D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF2AA71-8BA9-4DF6-8930-67CF991D32D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF2AA71-8BA9-4DF6-8930-67CF991D32D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5858430D-4789-4E4A-95B6-2CAB2101E4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5858430D-4789-4E4A-95B6-2CAB2101E4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5858430D-4789-4E4A-95B6-2CAB2101E4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5858430D-4789-4E4A-95B6-2CAB2101E4EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
