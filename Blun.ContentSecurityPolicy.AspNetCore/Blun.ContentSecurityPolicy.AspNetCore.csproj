@@ -29,6 +29,11 @@
 		<Today>$([System.DateTime]::Now)</Today>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<OutputType>Library</OutputType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DocumentationFile>C:\git\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.AspNetCore\Blun.ContentSecurityPolicy.AspNetCore.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -47,6 +52,11 @@
   <ItemGroup>
     <None Remove="BuildTimeStamp.txt" />
     <EmbeddedResource Include="BuildTimeStamp.txt" />
+    <None Remove="LICENSE" />
+    <Content Include="LICENSE">
+	    <Pack>true</Pack>
+	    <PackagePath>\</PackagePath>
+    </Content>
   </ItemGroup>
 	
   <Target Name="CreateBuildTime" BeforeTargets="build">

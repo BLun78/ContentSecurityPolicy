@@ -54,6 +54,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Blun.ContentSecurityPolicy.Webapi.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,6 +85,11 @@
   <ItemGroup>
     <None Remove="BuildTimeStamp.txt" />
     <EmbeddedResource Include="BuildTimeStamp.txt" />
+    <None Remove="LICENSE" />
+    <Content Include="LICENSE">
+	      <Pack>true</Pack>
+	    <PackagePath>\</PackagePath>
+    </Content>
   </ItemGroup>
   <Target Name="CreateBuildTime" BeforeTargets="build">
     <Exec Command="echo $(today) &gt; $(ProjectDir)BuildTimeStamp.txt" />
