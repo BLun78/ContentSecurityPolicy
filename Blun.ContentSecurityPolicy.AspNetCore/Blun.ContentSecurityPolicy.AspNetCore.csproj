@@ -27,6 +27,8 @@
 		<FileVersion>1.0.0.0</FileVersion>
 		<PackageVersion>1.0.0.0</PackageVersion>
 		<Today>$([System.DateTime]::Now)</Today>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
 	<ItemGroup>

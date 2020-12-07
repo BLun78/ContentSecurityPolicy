@@ -46,7 +46,7 @@ namespace Blun.ContentSecurityPolicy
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
             return null;
