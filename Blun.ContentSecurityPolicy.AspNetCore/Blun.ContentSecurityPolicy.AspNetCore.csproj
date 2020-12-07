@@ -1,11 +1,56 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<!-- Nuget specs -->
+		<PackageId>Blun.ContentSecurityPolicy.AspNetCore</PackageId>
+		<Authors>Björn Lundström</Authors>
+		<Copyright>© 2019-2020 Björn Lundström</Copyright>
+		<Title>BLun ContentSecurityPolicy</Title>
+		<Description>A lib for easy configure ContentSecurityPolicy!</Description>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageTags>CSP ContentSecurityPolicy mvc webapi blun AspNetCore mvc7</PackageTags>
+		<PackageReleaseNotes>https://github.com/BLun78/ContentSecurityPolicy/releases</PackageReleaseNotes>
+		<PackageProjectUrl>https://github.com/BLun78/ContentSecurityPolicy</PackageProjectUrl>
+		<Company>BLun.de - Björn Lundström</Company>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BLun78/ContentSecurityPolicy.git</RepositoryUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+		<LangVersion>latest</LangVersion>
+		<Version>1.0.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<PackageVersion>1.0.0.0</PackageVersion>
+		<Today>$([System.DateTime]::Now)</Today>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
 
   <ItemGroup>
-    <ProjectReference Include="..\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.csproj" />
+    <None Remove="BuildTimeStamp.txt" />
+    <EmbeddedResource Include="BuildTimeStamp.txt" />
   </ItemGroup>
-
+	
+  <Target Name="CreateBuildTime" BeforeTargets="build">
+    <Exec Command="echo $(today) &gt; $(ProjectDir)BuildTimeStamp.txt" />
+  </Target>
 </Project>

@@ -12,6 +12,32 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+
+		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<!-- Nuget specs -->
+		<PackageId>Blun.ContentSecurityPolicy.Mvc</PackageId>
+		<Authors>Björn Lundström</Authors>
+		<Copyright>© 2019-2020 Björn Lundström</Copyright>
+		<Title>BLun ContentSecurityPolicy</Title>
+		<Description>A lib for easy configure ContentSecurityPolicy!</Description>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageTags>CSP ContentSecurityPolicy mvc blun</PackageTags>
+		<PackageReleaseNotes>https://github.com/BLun78/ContentSecurityPolicy/releases</PackageReleaseNotes>
+		<PackageProjectUrl>https://github.com/BLun78/ContentSecurityPolicy</PackageProjectUrl>
+		<Company>BLun.de - Björn Lundström</Company>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BLun78/ContentSecurityPolicy.git</RepositoryUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+		<LangVersion>latest</LangVersion>
+		<Version>1.0.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<PackageVersion>1.0.0.0</PackageVersion>
+		<Today>$([System.DateTime]::Now)</Today>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +70,18 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.csproj">
       <Project>{707353ea-7a93-4cd3-a9fa-a03824ea373a}</Project>
@@ -51,4 +89,14 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+
+  <ItemGroup>
+    <None Remove="BuildTimeStamp.txt" />
+    <EmbeddedResource Include="BuildTimeStamp.txt" />
+  </ItemGroup>
+  
+  <Target Name="CreateBuildTime" BeforeTargets="build">
+    <Exec Command="echo $(today) &gt; $(ProjectDir)BuildTimeStamp.txt" />
+  </Target>
 </Project>
