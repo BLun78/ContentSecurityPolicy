@@ -29,6 +29,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new FontSrcDirectiveBuilder AllowUnsafeEval() => (FontSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new FontSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (FontSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new FontSrcDirectiveBuilder Allow(string source) => (FontSrcDirectiveBuilder)base.Allow(source);
+        public new FontSrcDirectiveBuilder Allow(Uri source) => (FontSrcDirectiveBuilder)base.Allow(source);
         public new FontSrcDirectiveBuilder AllowNone() => (FontSrcDirectiveBuilder)base.AllowNone();
         public new FontSrcDirectiveBuilder AllowUnsafeHashes() => (FontSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new FontSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (FontSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

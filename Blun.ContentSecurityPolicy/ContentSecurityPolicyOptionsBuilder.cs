@@ -20,6 +20,7 @@ namespace Blun.ContentSecurityPolicy
         public ManifestSrcDirectiveBuilder ManifestSrc { get; internal set; } = new ManifestSrcDirectiveBuilder();
         public ChildSrcDirectiveBuilder ChildSrc { get; internal set; } = new ChildSrcDirectiveBuilder();
         public ObjectSrcDirectiveBuilder ObjectSrc { get; internal set; } = new ObjectSrcDirectiveBuilder();
+        public ReportUriDirectiveBuilder ReportUri { get; internal set; } = new ReportUriDirectiveBuilder();
 
         public ContentSecurityPolicyOptions Build()
         {
@@ -34,6 +35,7 @@ namespace Blun.ContentSecurityPolicy
             ArrangeBuild(_contentSecurityPolicyOptions.ManifestSrc, ManifestSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.ChildSrc, ChildSrc.Sources);
             ArrangeBuild(_contentSecurityPolicyOptions.ObjectSrc, ObjectSrc.Sources);
+            ArrangeBuild(_contentSecurityPolicyOptions.ReportUri, ReportUri.Sources);
             return _contentSecurityPolicyOptions;
         }
 

@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Blun.ContentSecurityPolicy.Directives.Values
 {
-    public interface IAllowStrictDynamic<T>
-        where T : ContentSecurityPolicyOptionsDirectiveBuilder
+    public interface IReportingUri<T>
+        where T: class
     {
-        T AllowStrictDynamic();
+        T SetReportingUri(string uri);
+        T SetReportingUri(Uri uri);
     }
 }

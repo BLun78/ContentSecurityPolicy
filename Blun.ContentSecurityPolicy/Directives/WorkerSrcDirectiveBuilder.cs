@@ -29,6 +29,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new WorkerSrcDirectiveBuilder AllowUnsafeEval() => (WorkerSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new WorkerSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (WorkerSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new WorkerSrcDirectiveBuilder Allow(string source) => (WorkerSrcDirectiveBuilder)base.Allow(source);
+        public new WorkerSrcDirectiveBuilder Allow(Uri source) => (WorkerSrcDirectiveBuilder)base.Allow(source);
         public new WorkerSrcDirectiveBuilder AllowNone() => (WorkerSrcDirectiveBuilder)base.AllowNone();
         public new WorkerSrcDirectiveBuilder AllowUnsafeHashes() => (WorkerSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new WorkerSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (WorkerSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

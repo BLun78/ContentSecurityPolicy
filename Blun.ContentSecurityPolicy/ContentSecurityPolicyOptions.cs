@@ -16,6 +16,7 @@ namespace Blun.ContentSecurityPolicy
         public List<string> ManifestSrc { get; internal set; } = new List<string>();
         public List<string> ChildSrc { get; internal set; } = new List<string>();
         public List<string> ObjectSrc { get; internal set; } = new List<string>();
+        public List<string> ReportUri { get; internal set; } = new List<string>();
 
         public string CreateCspHeaderValue()
         {
@@ -31,6 +32,7 @@ namespace Blun.ContentSecurityPolicy
             value.Append(GetDirective("manifest-src", ManifestSrc));
             value.Append(GetDirective("child-src", ChildSrc));
             value.Append(GetDirective("object-src", ObjectSrc));
+            value.Append(GetDirective("report-uri", ReportUri));
             return value.ToString();
         }
 

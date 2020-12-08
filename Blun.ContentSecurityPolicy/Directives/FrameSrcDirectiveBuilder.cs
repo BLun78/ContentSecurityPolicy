@@ -29,6 +29,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new FrameSrcDirectiveBuilder AllowUnsafeEval() => (FrameSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new FrameSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (FrameSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new FrameSrcDirectiveBuilder Allow(string source) => (FrameSrcDirectiveBuilder)base.Allow(source);
+        public new FrameSrcDirectiveBuilder Allow(Uri source) => (FrameSrcDirectiveBuilder)base.Allow(source);
         public new FrameSrcDirectiveBuilder AllowNone() => (FrameSrcDirectiveBuilder)base.AllowNone();
         public new FrameSrcDirectiveBuilder AllowUnsafeHashes() => (FrameSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new FrameSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (FrameSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

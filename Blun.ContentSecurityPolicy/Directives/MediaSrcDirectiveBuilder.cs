@@ -29,6 +29,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new MediaSrcDirectiveBuilder AllowUnsafeEval() => (MediaSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new MediaSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (MediaSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new MediaSrcDirectiveBuilder Allow(string source) => (MediaSrcDirectiveBuilder)base.Allow(source);
+        public new MediaSrcDirectiveBuilder Allow(Uri source) => (MediaSrcDirectiveBuilder)base.Allow(source);
         public new MediaSrcDirectiveBuilder AllowNone() => (MediaSrcDirectiveBuilder)base.AllowNone();
         public new MediaSrcDirectiveBuilder AllowUnsafeHashes() => (MediaSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new MediaSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (MediaSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

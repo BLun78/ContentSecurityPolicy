@@ -29,6 +29,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new ConnectSrcDirectiveBuilder AllowUnsafeEval() => (ConnectSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new ConnectSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (ConnectSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new ConnectSrcDirectiveBuilder Allow(string source) => (ConnectSrcDirectiveBuilder)base.Allow(source);
+        public new ConnectSrcDirectiveBuilder Allow(Uri source) => (ConnectSrcDirectiveBuilder)base.Allow(source);
         public new ConnectSrcDirectiveBuilder AllowNone() => (ConnectSrcDirectiveBuilder)base.AllowNone();
         public new ConnectSrcDirectiveBuilder AllowUnsafeHashes() => (ConnectSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new ConnectSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (ConnectSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

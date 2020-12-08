@@ -31,6 +31,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new ImgSrcDirectiveBuilder AllowUnsafeEval() => (ImgSrcDirectiveBuilder)base.AllowUnsafeEval();
         public new ImgSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (ImgSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new ImgSrcDirectiveBuilder Allow(string source) => (ImgSrcDirectiveBuilder)base.Allow(source);
+        public new ImgSrcDirectiveBuilder Allow(Uri source) => (ImgSrcDirectiveBuilder)base.Allow(source);
         public new ImgSrcDirectiveBuilder AllowNone() => (ImgSrcDirectiveBuilder)base.AllowNone();
         public new ImgSrcDirectiveBuilder AllowUnsafeHashes() => (ImgSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new ImgSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (ImgSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);

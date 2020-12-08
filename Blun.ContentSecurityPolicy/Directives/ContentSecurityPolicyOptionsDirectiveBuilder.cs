@@ -1,18 +1,15 @@
 using System;
-using System.Collections.Generic;
 using Blun.ContentSecurityPolicy.Directives.Values;
 
 namespace Blun.ContentSecurityPolicy.Directives
 {
-    public abstract class ContentSecurityPolicyOptionsDirectiveBuilder
+    public abstract class ContentSecurityPolicyOptionsDirectiveBuilder : BaseDirectiveBuilder
     {
-        protected internal List<string> Sources { get; set; }
-
-        protected ContentSecurityPolicyOptionsDirectiveBuilder()
+        protected ContentSecurityPolicyOptionsDirectiveBuilder() :base()
         {
-            Sources = new List<string>();
-        }
+        }  
 
+        protected internal ContentSecurityPolicyOptionsDirectiveBuilder Allow(Uri source) => Allow(source.ToString());
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowSelf() => Allow("'self'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowStrictDynamic() => Allow("'strict-dynamic'");
         protected internal ContentSecurityPolicyOptionsDirectiveBuilder AllowReportSample() => Allow("'report-sample'");

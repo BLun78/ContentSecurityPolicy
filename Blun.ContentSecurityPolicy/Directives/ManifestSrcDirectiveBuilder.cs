@@ -30,6 +30,7 @@ namespace Blun.ContentSecurityPolicy.Directives
         public new ManifestSrcDirectiveBuilder AllowUnsafeEval(bool isDev) => (ManifestSrcDirectiveBuilder)base.AllowUnsafeEval(isDev);
         public new ManifestSrcDirectiveBuilder Allow(string source) => (ManifestSrcDirectiveBuilder)base.Allow(source);
         public new ManifestSrcDirectiveBuilder AllowNone() => (ManifestSrcDirectiveBuilder)base.AllowNone();
+        public new ManifestSrcDirectiveBuilder Allow(Uri source) => (ManifestSrcDirectiveBuilder)base.Allow(source);
         public new ManifestSrcDirectiveBuilder AllowUnsafeHashes() => (ManifestSrcDirectiveBuilder)base.AllowUnsafeHashes();
         public new ManifestSrcDirectiveBuilder AllowUnsafeHashes(bool setThis) => (ManifestSrcDirectiveBuilder)base.AllowUnsafeHashes(setThis);
         public new ManifestSrcDirectiveBuilder AllowHash(HashDirective hash, string base64HashValue) => (ManifestSrcDirectiveBuilder)base.AllowHash(hash, base64HashValue);
