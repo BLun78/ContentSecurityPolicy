@@ -23,17 +23,19 @@ namespace Blun.ContentSecurityPolicy.Webapi
         }
 
         public override bool AllowMultiple => false;
-
-        public override void OnActionExecuting(HttpActionContext actionContext)
+        
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
-            var headers = actionContext.Response.Headers;
-            if (actionContext.Response.Headers.Contains(_handleHeader.GetHeaderName))
+            base.OnActionExecuted(actionExecutedContext);
+
+            var headers = actionExecutedContext.Response.Headers;
+            if (actionExecutedContext.Response.Headers.Contains(_handleHeader.GetHeaderName))
             {
                 headers.Remove(_handleHeader.GetHeaderName);
             }
             if (!string.IsNullOrWhiteSpace(_handleHeader.GetHeaderValue()))
             {
-                actionContext.Response.Headers.Add(_handleHeader.GetHeaderName, _handleHeader.GetHeaderValue());
+                actionExecutedContext.Response.Headers.Add(_handleHeader.GetHeaderName, _handleHeader.GetHeaderValue());
             }
         }
     }
