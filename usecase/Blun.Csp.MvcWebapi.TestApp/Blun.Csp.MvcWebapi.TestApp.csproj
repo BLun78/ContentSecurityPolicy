@@ -295,11 +295,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Blun.ContentSecurityPolicy.Mvc\Blun.ContentSecurityPolicy.Mvc.csproj">
+    <ProjectReference Include="..\..\src\net4\Blun.ContentSecurityPolicy.Mvc\Blun.ContentSecurityPolicy.Mvc.csproj">
       <Project>{e435e97b-1693-4ced-8d32-b8c2e96536c9}</Project>
       <Name>Blun.ContentSecurityPolicy.Mvc</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Blun.ContentSecurityPolicy.Webapi\Blun.ContentSecurityPolicy.Webapi.csproj">
+    <ProjectReference Include="..\..\src\net4\Blun.ContentSecurityPolicy.Webapi\Blun.ContentSecurityPolicy.Webapi.csproj">
       <Project>{1df2aa71-8ba9-4df6-8930-67cf991d32d0}</Project>
       <Name>Blun.ContentSecurityPolicy.Webapi</Name>
     </ProjectReference>

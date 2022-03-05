@@ -54,6 +54,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>bin\Debug\u.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -81,8 +82,8 @@
   <ItemGroup>
     <None Remove="LICENSE" />
     <Content Include="LICENSE">
-	      <Pack>true</Pack>
-	    <PackagePath>\</PackagePath>
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

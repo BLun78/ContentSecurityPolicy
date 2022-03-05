@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
 
 		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
 		<IncludeSymbols>true</IncludeSymbols>
@@ -31,19 +30,12 @@
 		<OutputType>Library</OutputType>
 		<IsPackable>true</IsPackable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <DocumentationFile>C:\git\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.AspNetCore\Blun.ContentSecurityPolicy.AspNetCore.xml</DocumentationFile>
-	</PropertyGroup>
-
-	<ItemGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	<ItemGroup>
 		<ProjectReference Include="..\..\lib\Blun.ContentSecurityPolicy\Blun.ContentSecurityPolicy.csproj" />
 	</ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <PackageReference Include="Blun.ContentSecurityPolicy" Version="[1.0.0,2.0.0]" />
-  </ItemGroup>
 
 	<ItemGroup>
 	
